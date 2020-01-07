@@ -14,81 +14,24 @@ Pour commencer il est neccessaire de metre a jour le systeme.
 yum check-update
 yum update
 ```
-Installation d'ansible: 
+Installation du repository EPEL
 ```
-yum install ansible
+yum -y install epel-release
+```
+Installation des paquets et dépendances nécessaires 
+```
+yum -y install git gettext ansible docker nodejs npm gcc-c++ bzip2
+yum -y install python-docker-py
 ```
 
 ## Installation
 
-Créer le fichier install_aws.yml qui contiendra le playbook d'installation AWX:
+Démarrer et activer le service Docker
 ```
-touch install_aws.yml
-```
-Ouvrer le avec votre éditeur préféré
-```
-vi install_aws.yml
-```
-et insérez le code suivant :
-``` YAML
-- name: Deploy AWX
-  hosts: localhost
-  become: true
-  become_user: root
-
-  tasks:
-
-    - name: sort out the yum repos
-      yum:
-        name: "{{ item }}"
-        state: "latest"
-      with_items:
-        - "epel-release"
-        - "yum-utils"
-
-    - name: add the docker ce yum repo
-      yum_repository:
-        name: "docker-ce"
-        description: "Docker CE YUM repo"
-        gpgcheck: "yes"
-        enabled: "yes"
-        baseurl: "https://download.docker.com/linux/centos/7/$basearch/stable"
-        gpgkey: "https://download.docker.com/linux/centos/gpg"
-
-    - name: install the prerequisites using yum
-      yum:
-        name: "{{ item }}"
-        state: "latest"
-      with_items:
-        - "epel-release"
-        - "libselinux-python"
-        - "python-wheel"
-        - "python-pip"
-        - "git"
-        - "docker-ce"
-
-    - name: start and enable docker
-      systemd:
-        name: "docker"
-        enabled: "yes"
-        state: "started"
-
-    - name: install the python packages using pip
-      pip:
-        name: "{{ item }}"
-        state: "latest"
-      with_items:
-        - "pip"
-        - "ansible"
-        - "boto"
-        - "boto3"
-        - "docker"
+systemctl start docker
+systemctl enable docker
 ```
 
-Exécutez le playbook :
-```
-ansible-playbook -i inventory install_aws.yml
-```
 Installation de python 3 : 
 ```
 sudo yum install centos-release-scl
