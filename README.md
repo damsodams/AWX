@@ -120,6 +120,6 @@ Une fois le playbook exécuté vous devriez avoir des container docker monté:
 ```
 docker ps -a
 ```
-Connectez vous sur l'interface Web via l'url suivante: http://<ipoudnsdevotremachine>
+Connectez vous sur l'interface Web via l'url suivante: http://ipoudnsdevotremachine
 Attendez que l'installation de AWX se finalise.
  Une fois l'installation terminée authentifiez vous avec les identifiants par défaut (login : admin, mot de passe: password).
