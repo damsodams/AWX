@@ -45,7 +45,7 @@ sudo yum install python-pip
 ```
 Installation de docker-compose : 
 ```
-sudo yum install docker-compose
+pip install docker-compose
 ```
 récuperer le repos git de awx :
 ```
