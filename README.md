@@ -3,15 +3,19 @@ Installation d'Ansible-AWX l'alternative gratuite de ansible-tower sur CentOs7
 avec docker-compose.
 
 ## Pre-requis 
-#Matériel:
+# Matériel:
   - 4GB RAM.
   - 20 GB d'espace dédié sur le disque dur.
   - Processeur 64 Bit
   - 2 CPU minimum.
-#Logiciel:
+# Logiciel:
   - PostgreSQL version 10 
   - Ansible version 2.2 
- 
-##Installation
 
+## Installation
+Pour commencer il est neccessaire de metre a jour le systeme. 
+```
+yum check-update
+yum update
+```
  
