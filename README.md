@@ -47,7 +47,7 @@ vi install_aws.yml
 et insérez le code suivant :
 ``` YAML
 - name: Deploy AWX
-  hosts: all
+  hosts: localhost
   become: true
   become_user: root
 
@@ -111,10 +111,10 @@ et insérez le code suivant :
       args:
         chdir: "~/awx/installer"
 ```
-Dans /etc/ansible/hosts ajouter l'ip de votre machine puis 
+
 Exécutez le playbook :
 ```
-ansible-playbook -i hosts install_aws.yml
+ansible-playbook -i inventory install_aws.yml
 ```
 Une fois le playbook exécuté vous devriez avoir des container docker monté:
 ```
