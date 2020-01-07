@@ -1,2 +1,5 @@
 # AWX
-AWX Installation CentOs 7 with docker-compose
+Installation de Ansible AWX l'alternative gratuite de ansible-tower sur CentOs7
+avec docker-compose.
+
+
