@@ -6,13 +6,9 @@ avec docker-compose.
 # Matériel:
   - 4GB RAM.
   - 20 GB d'espace dédié sur le disque dur.
-  - Processeur 64 Bit
+  - Processeur 64 Bit.
   - 2 CPU minimum.
 # Logiciel:
-  - PostgreSQL version 10 
-  - Ansible version 2.2 
-
-## Installation
 Pour commencer il est neccessaire de metre a jour le systeme. 
 ```
 yum check-update
@@ -37,6 +33,9 @@ Installation de docker-compose :
 ```
 sudo yum install docker-compose
 ```
+
+## Installation
+
 Créer le fichier install_aws.yml qui contiendra le playbook d'installation AWX:
 ```
 touch install_aws.yml
@@ -123,4 +122,4 @@ docker ps -a
 ```
 Connectez vous sur l'interface Web via l'url suivante: http://<ipoudnsdevotremachine>
 Attendez que l'installation de AWX se finalise.
- Une fois l'installation terminée authentifiez vous avec les identifiants par défaut (login : admin, mot de passe: password):
+ Une fois l'installation terminée authentifiez vous avec les identifiants par défaut (login : admin, mot de passe: password).
