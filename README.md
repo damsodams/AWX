@@ -18,21 +18,6 @@ Installation d'ansible:
 ```
 yum install ansible
 ```
-Installation de python 3 : 
-```
-sudo yum install centos-release-scl
-sudo yum install rh-python36
-scl enable rh-python36 bash
-```
-Installation de pip :
-```
-sudo yum install epel-release
-sudo yum install python-pip
-```
-Installation de docker-compose : 
-```
-sudo yum install docker-compose
-```
 
 ## Installation
 
@@ -103,6 +88,21 @@ et insérez le code suivant :
 Exécutez le playbook :
 ```
 ansible-playbook -i inventory install_aws.yml
+```
+Installation de python 3 : 
+```
+sudo yum install centos-release-scl
+sudo yum install rh-python36
+scl enable rh-python36 bash
+```
+Installation de pip :
+```
+sudo yum install epel-release
+sudo yum install python-pip
+```
+Installation de docker-compose : 
+```
+sudo yum install docker-compose
 ```
 récuperer le repos git de awx :
 ```
