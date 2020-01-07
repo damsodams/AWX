@@ -98,25 +98,22 @@ et insérez le code suivant :
         - "boto"
         - "boto3"
         - "docker"
-
-    - name: check out the awx repo
-      git:
-        repo: "https://github.com/ansible/awx.git"
-        dest: "~/awx"
-        clone: "yes"
-        update: "yes"
-
-    - name: install awx
-      command: "ansible-playbook -i inventory install.yml"
-      args:
-        chdir: "~/awx/installer"
 ```
 
 Exécutez le playbook :
 ```
 ansible-playbook -i inventory install_aws.yml
 ```
-Une fois le playbook exécuté vous devriez avoir des container docker monté:
+récuperer le repos git de awx :
+```
+git clone https://github.com/ansible/awx.git
+```
+exécuter l'installer qui ce trouve dans "~/awx/installer":
+```
+ansible-playbook -i inventory install.yml
+```
+
+Une fois l'installer exécuté vous devriez avoir des container docker monté:
 ```
 docker ps -a
 ```
